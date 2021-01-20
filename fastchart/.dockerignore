@@ -1,0 +1,4 @@
+.dockerignore
+actions.yml
+__pycache__/
+.devcontainer/
