@@ -7,4 +7,5 @@ pyfxgit==0.0.1
 requests
 ta==0.6.1
 uvicorn==0.9.0
+uvloop==0.13.0
 yfinance==0.1.54
