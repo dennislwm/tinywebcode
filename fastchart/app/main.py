@@ -9,7 +9,7 @@ from typing import Optional
 from fastapi import FastAPI
 
 # Insert import code
-from lib import fastchart
+from .lib.fastchart import FastChart
 
 app = FastAPI(
     title='FastChart API',
@@ -19,10 +19,17 @@ app = FastAPI(
 )
 
 # Insert instance code
-objFastchart = fastchart.FastChart()
+objFastchart = FastChart()
+
+@app.get("/")
+async def read_root():
+    return {
+        "name": "fastchart",
+        "version": f"Hello world! From FastAPI running on Uvicorn."
+    }
 
 @app.get('/{symbol}', response_model=None)
-def get_symbol(
+async def get_symbol(
     symbol: str, main: Optional[str] = None, sub: Optional[str] = None
 ) -> None:
     """
