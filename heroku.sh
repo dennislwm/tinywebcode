@@ -1,0 +1,5 @@
+alias huc='heroku create fastchart --buildpack heroku/python'
+alias hud='heroku destroy'
+alias hul='heroku login'
+alias hur='heroku git:remote -a'
+alias gpu='git subtree push --prefix fastchart heroku master'
